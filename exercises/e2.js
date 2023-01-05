@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from '../data/data';
 
 // SPACE DATA EXERCISE 2
 // Return an array of all Asteroids' names
@@ -6,9 +6,11 @@ import { data } from "../data/data";
 
 export function getAsteroidNames(data) {
   // Your code goes here...
+  var asteroidNames = data.asteroids.map(function (asteroid) {
+    return asteroid.name;
+  });
+  return asteroidNames;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"

@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from '../data/data';
 
 // SPACE DATA EXERCISE 13
 // Return the average temperature of all the Planets
@@ -6,9 +6,18 @@ import { data } from "../data/data";
 
 export function getAveragePlanetsTemperature(data) {
   // Your code goes here...
+  var avgPlanetTemps = data.planets.map(function (planet) {
+    return planet.avgTemp;
+  });
+
+  var allPlanetAvgTempTotal = avgPlanetTemps.reduce(function (acc, val) {
+    return acc + val;
+  }, 0);
+
+  var allPlanetAvgTemp = allPlanetAvgTempTotal / avgPlanetTemps.length;
+
+  return allPlanetAvgTemp;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

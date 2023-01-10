@@ -7,17 +7,11 @@ import { data } from '../data/data';
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
 
-  var getDiscoveryYear = data.asteroids.map(function (asteroid) {
-    return asteroid.discoveryYear;
-  });
+  var getDiscoveryYear = data.asteroids.map((asteroid) => asteroid.discoveryYear);
 
-  const count = getDiscoveryYear.reduce(function (acc, val) {
-    return { ...acc, [val]: (acc[val] || 0) + 1 };
-  }, {});
+  const count = getDiscoveryYear.reduce((acc, val) => { ...acc, [val]: (acc[val] || 0) + 1 }, {});
 
-  var yearMostDiscoveries = Object.keys(count).reduce(function (a, b) {
-    return count[a] > count[b] ? a : b;
-  });
+  var yearMostDiscoveries = Object.keys(count).reduce((a, b) => count[a] > count[b] ? a : b);
 
   return Number(yearMostDiscoveries);
 }

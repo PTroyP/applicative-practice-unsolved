@@ -6,11 +6,7 @@ import { data } from '../data/data';
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
-  var getAsteroidObject = data.asteroids.find(function (asteroid) {
-    return asteroid.name === asteroidName;
-  });
-
-  return getAsteroidObject;
+  return data.asteroids.find((asteroid) => asteroid.name === asteroidName);
 }
 
 // === TEST YOURSELF ===

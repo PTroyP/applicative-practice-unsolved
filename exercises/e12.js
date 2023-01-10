@@ -6,19 +6,7 @@ import { data } from '../data/data';
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
-  var planetsWithMoonCounts = data.planets.filter(function (planet) {
-    return planet.moonsCount;
-  });
-
-  var arrMoonCounts = planetsWithMoonCounts.map(function (planet) {
-    return planet.moonsCount;
-  });
-
-  var moonTotal = arrMoonCounts.reduce(function (acc, val) {
-    return acc + val;
-  }, 0);
-
-  return moonTotal;
+  return data.planets.reduce((acc, val) => acc + (val.moonsCount || 0), 0);
 }
 
 // === TEST YOURSELF ===
